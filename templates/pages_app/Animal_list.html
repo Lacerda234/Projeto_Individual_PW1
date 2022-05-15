@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'imagens/icon.png' %}">
+    <title>Listagem Animais</title>
+</head>
+<body>
+    <div>
+        <h1>Lista de Animais para Adoção</h1>
+        <input type="submit" onclick="location.href = '{% url 'pages_app:createAnimal' %}'" value="Cadastrar novo animal">
+        <ul>
+            {% for animal in object_list %}
+            <li><h2>{{ animal.nome }}</h2></li>
+            <a href="{% url 'pages_app:updateAnimal' pk=animal.id %}">Editar</a> - 
+            <a href="{% url 'pages_app:detailAnimal' pk=animal.id %}">Ver Detalhes</a> - 
+            <a href="{% url 'pages_app:deleteAnimal' pk=animal.id %}">Apagar</a>
+            {% endfor %}
+        </ul>
+        <input type="submit" onclick="location.href = '{% url 'pages_app:home' %}'" value="Voltar">
+    </div>
+</body>
+</html>

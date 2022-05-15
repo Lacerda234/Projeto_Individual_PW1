@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'imagens/icon.png' %}">
+    <title>Listagem Usuários</title>
+</head>
+<body>
+    <div>
+        <h1>Lista de Usuários cadastrados</h1>
+        <input type="submit" onclick="location.href = '{% url 'pages_app:createUser' %}'" value="Cadastrar novo usuário">
+        <ul>
+            {% for usuario in object_list %}
+            <li><h2>{{ usuario.nome }}</h2></li>
+            <a href="{% url 'pages_app:updateUser' pk=usuario.id %}">Editar</a> - 
+            <a href="{% url 'pages_app:detailUser' pk=usuario.id %}">Ver Detalhes</a> - 
+            <a href="{% url 'pages_app:deleteUser' pk=usuario.id %}">Apagar</a> 
+            {% endfor %}
+        </ul>
+        <input type="submit" onclick="location.href = '{% url 'pages_app:home' %}'" value="Voltar">
+    </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+.capa{
+    font-family: bangers;
+    text-align: center;
+    align-content: center;
+    background-color: aquamarine;
+    border-radius: 10px;
+}
+
+.opcoes{
+    font-family: bangers;
+    text-align: center;
+}
+
+.rodape{
+    font-family: 'Courier New', Courier, monospace;
+}

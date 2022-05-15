@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'imagens/icon.png' %}">
+    <title>Detalhes Animal</title>
+</head>
+<body>
+    <div>
+        <h2>Informações {{ object.nome }}</h2>
+        Raça: {{ object.raça }}
+        <br />
+        Data de Nascimento: {{ object.data_nascimento }}
+        <br />
+        Tipo: {{ object.tipo }}
+        <br />
+        Sexo: {{ object.sexo }}
+        <br />
+        Observações: {{ object.observações }}
+        <br />
+        <input type="submit" onclick="location.href = '{% url 'pages_app:list' %}'" value="Voltar">
+    </div>
+</body>
+</html>

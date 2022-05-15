@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'imagens/icon.png' %}">
+    <title>Detalhes Usuário</title>
+</head>
+<body>
+    <div>
+        <h2>Informações {{ object.nome }}</h2>
+        CPF: {{ object.cpf }}
+        <br />
+        Telefone: {{ object.telefone }}
+        <br />
+        Idade: {{ object.idade }}
+        <br />
+        Email: {{ object.email }}
+        <br />
+        Sexo: {{ object.sexo }}
+        <br />
+        Data de Nascimento: {{ object.data_nascimento }}
+        <br />
+        Profissão: {{ object.profissão }}
+        <br />
+        <input type="submit" onclick="location.href = '{% url 'pages_app:listUser' %}'" value="Voltar">
+    </div>
+</body>
+</html>
